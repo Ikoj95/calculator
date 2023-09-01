@@ -32,12 +32,12 @@ function updateScreen() {
                 resultOperator.disabled = false;
             }
         }
-        //combine left side of operator and ability to change operator itself
+        //combine left side of operator and ability to change operator itself,only doing it once
         if (this.textContent.includes(checkIfOperatorExists(this.textContent))) {
             this.disabled = true;
             screen.textContent = screen.textContent + this.textContent;
-            textSplit = screen.textContent.split('');
             if (counter === 0) {
+                textSplit = screen.textContent.split('');
                 for (let i = 0; i < textSplit.length - 1; i++) {
                     textToShow[0] = textToShow[0] + textSplit[i];
                 }
@@ -59,10 +59,10 @@ function updateScreen() {
                 return (a / b).toFixed(2);
             }
             else if (textToShow[1] === '+') {
-                return a + b.toFixed(2);
+                return (a + b).toFixed(2);
             }
             else {
-                return a - b.toFixed(2);
+                return (a - b).toFixed(2);
             }
         });
         screen.textContent = result;
