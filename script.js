@@ -38,7 +38,7 @@ function updateScreen() {
             }
         }
         //combine left side of operator(only doing it once) and ability to change operator itself
-        if (this.textContent.includes(checkIfOperatorExists(this.textContent))) {
+        else if (this.textContent.includes(checkIfOperatorExists(this.textContent))) {
             this.disabled = true;
             point.disabled = false;
             numbers.forEach(e => e.disabled = false);
